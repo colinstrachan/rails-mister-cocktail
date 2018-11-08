@@ -1,0 +1,13 @@
+<%= render 'navbar' %>
+<div class="container">
+  <div class="wrapper-form">
+    <h1>Add a cocktail</h1>
+    <%= form_for(@cocktail) do |f| %>
+    <%= f.label :name %>
+    <br/>
+    <%= f.text_field :name, :value => @cocktail.name, :class => 'txt-field' %>
+    <br/><br/><br/><br/>
+    <%= f.submit 'Add cocktail', :class => 'add-button' %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="navbar">
+  <div class="navbar-logo">
+  <%= link_to cocktails_path, :action => 'go' do %>
+    Cocktail<b>Planet</b>
+  <% end %>
+  </div>
+  <div class="navbar-icon">
+  <%= link_to cocktails_path, :action => 'go' do %>
+    <i class="fas fa-cocktail fa-spin"></i>
+  <% end %>
+  </div>
+  <%= link_to new_cocktail_path, :action => 'go' do %>
+  <div class="navbar-add">
+    Add a cocktail
+  </div>
+  <% end %>
+</div>

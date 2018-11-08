@@ -1,3 +1,138 @@
 // Import your components CSS files here.
 @import "alert";
 @import "navbar";
+
+body {
+  background-color: #442277;
+  opacity: 1;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.container {
+  padding: 50px;
+}
+
+.container-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: top;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.wrapper-image {
+  flex: 2 0 auto;
+  background-color: black;
+  background-image: url('https://media.vogue.in/wp-content/uploads/2016/05/cocktails-featured1-866x487.jpg');
+  background-position: 200px;
+  background-repeat: no-repeat;
+  height: 600px;
+  width: 75%;
+  margin: 0 auto;
+  margin-right: 50px;
+  padding: 50px;
+  h1 {
+    color: white;
+  }
+  h2 {
+    color: #ccc;
+    font-size: 28px;
+  }
+  li {
+    color: #bbb;
+  }
+  transition: 1s ease;
+}
+
+.wrapper-image:hover {
+  box-shadow: 10px 10px 10px #111;
+  transition: 1s ease;
+}
+
+.wrapper-form {
+  flex: 1 0 auto;
+  width: 400px;
+  height: 600px;
+  padding: 30px;
+  background-color: black;
+  color: #bbb;
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ddd;
+  }
+  margin: 0 auto;
+  margin-left: 50px;
+  transition: 1s ease;
+}
+
+.wrapper-form:hover {
+  box-shadow: 10px 10px 10px #111;
+  transition: 1s ease;
+}
+
+.add-button {
+  padding: 20px;
+  border: 1px #aaa solid;
+  border-radius: 20px;
+  background-color: #111;
+  width: 50%;
+  color: white;
+  &:hover {
+    background-color: white;
+    color: #442277;
+  }
+  a {
+    color: white;
+  }
+  a:hover {
+    color: #111;
+  }
+}
+
+.top-row {
+  height: 250px;
+}
+
+.bottom-row {
+  height: 350px;
+  ul {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.txt-field {
+  width: 80%;
+}
+
+.fa-star {
+  color: yellow;
+}
+
+.delete-text {
+  font-size: 12px;
+}
+
+.form-image {
+  height: 180px;
+  opacity: 0.5;
+  align: bottom;
+  vertical-align: bottom;
+}

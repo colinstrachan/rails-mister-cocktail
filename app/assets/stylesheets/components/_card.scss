@@ -1,0 +1,54 @@
+.card {
+  width: 400px;
+  height: 215px;
+  background-color: black;
+  background-image: url('https://media.vogue.in/wp-content/uploads/2016/05/cocktails-featured1-866x487.jpg');
+  box-shadow: 5px 5px 5px #111;
+  border: 1px solid #111;
+  ul {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  padding: 0;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  a {
+    color: #ddd;
+  }
+  a:hover {
+    color: #eee;
+  }
+}
+
+.card:hover {
+  opacity: 1;
+}
+
+.card-body {
+  padding: 0px 15px 0px 15px;
+  height: 155px;
+  h2 {
+    font-size: 32px;
+  }
+  margin: 0 auto;
+}
+
+.card-footer {
+  padding: 10px 15px 10px 15px;
+  height: 35px;
+  background-color: #444;
+  opacity: 0.7;
+  font-size: 12px;
+  a {
+    color: #aaa;
+  }
+  a:hover {
+    color: #fff;
+  }
+}

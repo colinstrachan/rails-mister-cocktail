@@ -1,0 +1,60 @@
+<%= render 'navbar' %>
+
+<div class="container">
+  <div class="container-flex">
+    <div class="wrapper-image">
+      <div class="top-row">
+        <h1><%= @cocktail.name %></h1>
+        <h2>Ingredients</h2>
+        <ul>
+          <% @cocktail.doses.each do |dose| %>
+            <li>
+              <%= dose.ingredient.name %>
+              (<%= dose.description %>) |
+              <%= link_to "Delete", dose_path(dose), class: "delete-text", method: :delete, data: { confirm: "Are you sure?" } %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="bottom-row">
+        <h2>Reviews</h2>
+        <ul>
+          <% @cocktail.reviews.each do |review| %>
+            <li>
+              <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+              <% end %>
+              <%= review.content %> |
+              <%= link_to "Delete", review_path(review), class: "delete-text", method: :delete, data: { confirm: "Are you sure?" } %>
+            </li>
+          <% end %>
+        </ul>
+        <%= link_to "Back to index", cocktails_path %>
+      </div>
+    </div>
+    <div class="wrapper-form form-1">
+      <h1>Add an ingredient</h1>
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.association :ingredient, as: :select %>
+      <%= f.input :description, label: "Dose" %>
+      <%= f.submit "Add ingredient", class: "add-button" %>
+      <% end %>
+      <div class="formimg"><br/>
+        <img src='http://s1.1zoom.me/big0/1/Juice_Orange_fruit_Grapes_Fruit_Highball_glass_521682_1280x853.jpg' class="form-image">
+      </div>
+    </div>
+    <div class="wrapper-form form-2">
+      <h1>Review this cocktail</h1>
+      <% @rating_options = [0, 1, 2, 3, 4, 5] %>
+      <%= simple_form_for [@cocktail, @review] do |f| %>
+      <%= f.input :rating, as: :select, collection: 0..5 %>
+      <%= f.input :content, label: "What did you think?" %>
+      <%= f.submit "Add review", class: "add-button" %>
+      <% end %>
+      <div class="formimg">
+        <img src='http://s1.1zoom.me/b5050/745/contractBusiness_503728_2880x1800.jpg' class="form-image">
+      </div>
+    </div>
+
+  </div>
+</div>

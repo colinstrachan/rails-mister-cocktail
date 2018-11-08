@@ -1,0 +1,28 @@
+<%= render 'navbar' %>
+
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-md-4">
+      <div class="card">
+        <%= link_to cocktail_path(cocktail), :action => 'go' do %>
+        <div class="card-body">
+          <h2><%= cocktail.name %></h2>
+          <ul>
+            <% cocktail.doses[0..2].each do |dose| %>
+            <li>
+              <%= dose.ingredient.name %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+        <div class="card-footer">
+          <%= link_to "Edit", edit_cocktail_path(cocktail) %> |
+          <%= link_to "Delete", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
